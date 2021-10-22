@@ -6,11 +6,19 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 09:19:11 by vcastilh          #+#    #+#             */
-/*   Updated: 2021/10/20 10:22:24 by vcastilh         ###   ########.fr       */
+/*   Updated: 2021/10/20 15:36:31 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int	identify_flag(const char *fmt, va_list ap)
+{
+	if (*fmt == 'c')
+		return (type_c(va_arg(ap, int)));
+	else if (*fmt == 's')
+		return (type_s(va_arg(ap, char *)));
+}
 
 int	get_flag(const char *fmt, va_list ap)
 {
@@ -21,7 +29,7 @@ int	get_flag(const char *fmt, va_list ap)
 	{
 		if (*fmt == '%')
 		{	
-			printed_len += indentify_flag(++fmt, ap);
+			printed_len += identify_flag(++fmt, ap);
 		}
 		else
 		{
