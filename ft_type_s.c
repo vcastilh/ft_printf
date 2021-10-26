@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 15:38:38 by vcastilh          #+#    #+#             */
-/*   Updated: 2021/10/22 15:26:22 by vcastilh         ###   ########.fr       */
+/*   Updated: 2021/10/25 20:04:16 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int	type_s(char *str)
 		printed_len += write(1, str, ft_strlen(str) * sizeof(char));
 		return (printed_len);
 	}
-	return (NULL);
+	return (0);
 }
