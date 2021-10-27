@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 09:20:11 by vcastilh          #+#    #+#             */
-/*   Updated: 2021/10/26 10:48:03 by vcastilh         ###   ########.fr       */
+/*   Updated: 2021/10/26 11:36:24 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,5 @@ int		type_c(int c);
 int		type_s(char *str);
 int		type_p(unsigned long ptr);
 size_t	ft_strlen(const char *str);
+char	*ft_strchr(const char *str, int c);
 #endif
