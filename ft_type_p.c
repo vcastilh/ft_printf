@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 20:06:40 by vcastilh          #+#    #+#             */
-/*   Updated: 2021/10/26 14:55:10 by vcastilh         ###   ########.fr       */
+/*   Updated: 2021/10/27 16:52:57 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <stdio.h>
@@ -41,7 +41,7 @@ int	type_p(unsigned long ptr)
 	aux = ptr;
 	if (aux == 0)
 	{
-		return (write(1, "(nil)", 5 * sizeof(char)));
+		return (write(1, "0x0", 3 * sizeof(char)));
 	}
 	remainder_len = 0;
 	while (aux)
