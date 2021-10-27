@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 09:19:11 by vcastilh          #+#    #+#             */
-/*   Updated: 2021/10/26 15:23:13 by vcastilh         ###   ########.fr       */
+/*   Updated: 2021/10/27 16:53:35 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	get_flag(const char *fmt, va_list ap)
 	printed_len = 0;
 	while (*fmt)
 	{
-		if (*fmt == '%' && ft_strchr("csp", *(fmt + 1)))
+		if (*fmt == '%' && ft_strchr("cspdi", *(fmt + 1)))
 		{	
 			printed_len += identify_flag(++fmt, ap);
 			fmt++;
