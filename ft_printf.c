@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 09:19:11 by vcastilh          #+#    #+#             */
-/*   Updated: 2021/10/25 20:01:31 by vcastilh         ###   ########.fr       */
+/*   Updated: 2021/10/26 15:23:13 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	identify_flag(const char *fmt, va_list ap)
 		return (type_s(va_arg(ap, char *)));
 	else if (*fmt == 'p')
 		return (type_p(va_arg(ap, unsigned long)));
+	else if (*fmt == 'd' || *fmt == 'i')
+		return (type_d(va_arg(ap, int)));
 	else
 		return (0);
 }
@@ -31,9 +33,10 @@ int	get_flag(const char *fmt, va_list ap)
 	printed_len = 0;
 	while (*fmt)
 	{
-		if (*fmt == '%')
+		if (*fmt == '%' && ft_strchr("csp", *(fmt + 1)))
 		{	
 			printed_len += identify_flag(++fmt, ap);
+			fmt++;
 		}
 		else
 		{
