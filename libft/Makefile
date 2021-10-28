@@ -6,7 +6,7 @@
 #    By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/18 10:20:32 by vcastilh          #+#    #+#              #
-#    Updated: 2021/10/26 11:41:57 by vcastilh         ###   ########.fr        #
+#    Updated: 2021/10/28 09:01:42 by vcastilh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ CC = clang
 FILES = ft_strlen.c \
 		ft_itoa.c \
 		ft_strchr.c \
+		ft_uitoa.c \
 
 OBJFILES = $(FILES:%.c=%.o)
 
