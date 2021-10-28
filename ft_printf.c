@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 09:19:11 by vcastilh          #+#    #+#             */
-/*   Updated: 2021/10/27 16:53:35 by vcastilh         ###   ########.fr       */
+/*   Updated: 2021/10/28 09:08:59 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	identify_flag(const char *fmt, va_list ap)
 		return (type_p(va_arg(ap, unsigned long)));
 	else if (*fmt == 'd' || *fmt == 'i')
 		return (type_d(va_arg(ap, int)));
+	else if (*fmt == 'u')
+		return (type_u(va_arg(ap, int)));
 	else
 		return (0);
 }
@@ -33,7 +35,7 @@ int	get_flag(const char *fmt, va_list ap)
 	printed_len = 0;
 	while (*fmt)
 	{
-		if (*fmt == '%' && ft_strchr("cspdi", *(fmt + 1)))
+		if (*fmt == '%' && ft_strchr("cspdiu", *(fmt + 1)))
 		{	
 			printed_len += identify_flag(++fmt, ap);
 			fmt++;
