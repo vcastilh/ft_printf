@@ -6,31 +6,28 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 22:18:31 by vcastilh          #+#    #+#             */
-/*   Updated: 2021/10/28 11:01:25 by vcastilh         ###   ########.fr       */
+/*   Updated: 2021/10/29 20:33:51 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-
-int	digit_counter(unsigned int	n)
+int	digit_counter(unsigned int n)
 {
 	size_t	len;
-	
+
 	len = 0;
 	if (n == 0)
 	{
 		len = 1;
 		return (len);
 	}
-	while(n)
+	while (n)
 	{
 		n /= 10;
 		len++;
 	}
 	return (len);
-
 }
 
 char	*ft_uitoa(unsigned int n)

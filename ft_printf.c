@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 09:19:11 by vcastilh          #+#    #+#             */
-/*   Updated: 2021/10/29 15:43:18 by vcastilh         ###   ########.fr       */
+/*   Updated: 2021/10/29 20:27:58 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	get_flag(const char *fmt, va_list ap)
 	}
 	return (printed_len);
 }
-
 
 int	ft_printf(const char *format, ...)
 {

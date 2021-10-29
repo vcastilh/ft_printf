@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 20:06:40 by vcastilh          #+#    #+#             */
-/*   Updated: 2021/10/28 17:02:08 by vcastilh         ###   ########.fr       */
+/*   Updated: 2021/10/29 20:24:58 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int	type_p(unsigned long ptr, int fmt)
 		aux /= 16;
 		remainder_len++;
 	}
-	return(ft_hex_converter(ptr, "0123456789abcdef", remainder_len, fmt));
+	return (ft_hex_converter(ptr, "0123456789abcdef", remainder_len, fmt));
 }

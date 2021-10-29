@@ -6,13 +6,13 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/27 15:19:04 by vcastilh          #+#    #+#             */
-/*   Updated: 2021/10/27 16:49:32 by vcastilh         ###   ########.fr       */
+/*   Updated: 2021/10/29 20:25:54 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	type_d(int	numb)
+int	type_d(int numb)
 {
 	char	*str;
 	int		printed_len;
