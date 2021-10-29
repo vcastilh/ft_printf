@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_type_x.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/20 09:20:11 by vcastilh          #+#    #+#             */
-/*   Updated: 2021/10/28 17:03:25 by vcastilh         ###   ########.fr       */
+/*   Created: 2021/10/28 14:33:37 by vcastilh          #+#    #+#             */
+/*   Updated: 2021/10/28 17:05:16 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdarg.h>
-# include <unistd.h>
-# include <stdlib.h>
-# include "./libft/libft.h"
-int		ft_printf(const char *format, ...);
-int		type_c(int c);
-int		type_s(char *str);
-int		type_p(unsigned long ptr, int fmt);
-int		type_d(int n);
-int		type_u(unsigned int n);
-int		type_x(unsigned int, int fmt);
-#endif
+#include "ft_printf.h"
+
+int	type_x(unsigned int n, int fmt)
+{
+	unsigned int	aux;
+	int				remainder_len;
+	
+	if (n == 0)
+		return (write(1, "0", 1));
+	aux = n;
+	remainder_len = 0;
+	while(aux)
+	{
+		aux /= 16;
+		remainder_len++;
+	}
+	if (fmt == 'x')
+		return(ft_hex_converter(n, "0123456789abcdef", remainder_len, fmt));
+	return(ft_hex_converter(n, "0123456789ABCDEF", remainder_len, fmt));
+}

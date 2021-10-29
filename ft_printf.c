@@ -6,7 +6,7 @@
 /*   By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 09:19:11 by vcastilh          #+#    #+#             */
-/*   Updated: 2021/10/28 09:08:59 by vcastilh         ###   ########.fr       */
+/*   Updated: 2021/10/28 17:01:03 by vcastilh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,13 @@ int	identify_flag(const char *fmt, va_list ap)
 	else if (*fmt == 's')
 		return (type_s(va_arg(ap, char *)));
 	else if (*fmt == 'p')
-		return (type_p(va_arg(ap, unsigned long)));
+		return (type_p(va_arg(ap, unsigned long), *fmt));
 	else if (*fmt == 'd' || *fmt == 'i')
 		return (type_d(va_arg(ap, int)));
 	else if (*fmt == 'u')
-		return (type_u(va_arg(ap, int)));
+		return (type_u(va_arg(ap, unsigned int)));
+	else if (*fmt == 'x' || *fmt == 'X')
+		return (type_x(va_arg(ap, unsigned int), *fmt));
 	else
 		return (0);
 }
@@ -35,7 +37,7 @@ int	get_flag(const char *fmt, va_list ap)
 	printed_len = 0;
 	while (*fmt)
 	{
-		if (*fmt == '%' && ft_strchr("cspdiu", *(fmt + 1)))
+		if (*fmt == '%' && ft_strchr("cspdiuxX", *(fmt + 1)))
 		{	
 			printed_len += identify_flag(++fmt, ap);
 			fmt++;

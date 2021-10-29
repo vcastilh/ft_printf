@@ -6,7 +6,7 @@
 #    By: vcastilh <vcastilh@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/10/25 20:06:40 by vcastilh          #+#    #+#              #
-#    Updated: 2021/10/28 11:35:32 by vcastilh         ###   ########.fr        #
+#    Updated: 2021/10/28 15:52:55 by vcastilh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ SRCFILES = ft_printf.c \
 		   ft_type_s.c \
 		   ft_type_p.c \
 		   ft_type_d.c \
-		   ft_type_u.c
+		   ft_type_u.c \
+		   ft_type_x.c
 
 OBJFILES = ${SRCFILES:%.c=%.o}
 
